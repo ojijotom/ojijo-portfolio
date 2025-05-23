@@ -37,8 +37,8 @@
             margin: 5px 0;
         }
 
-        header .contact-info {
-            margin-top: 10px;
+        header .contact-info a {
+            color: #9fe3ff;
         }
 
         section {
@@ -56,13 +56,38 @@
             margin-bottom: 10px;
         }
 
-        .tech-stack ul, .experience ul, .projects ul {
+        .tech-stack ul, .experience ul, .projects ul, .certifications ul, .highlights ul, .soft-skills ul {
             list-style-type: none;
             padding-left: 0;
         }
 
         .projects .project {
             margin-bottom: 20px;
+        }
+
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact form input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact form input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        .appointment iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
         }
 
         footer {
@@ -140,7 +165,7 @@
         <h2>Experience</h2>
         <ul>
             <li><strong>Freelance Software Engineer</strong> (2023–Present)</li>
-            <li><strong>Android Development Intern</strong>, [eMobilis Mobile Technology Institute] (2022–2023)</li>
+            <li><strong>Android Development Intern</strong>, eMobilis Mobile Technology Institute (2022–2023)</li>
         </ul>
     </section>
 
@@ -173,6 +198,28 @@
             <li>Communication</li>
             <li>Rapid Learning</li>
         </ul>
+    </section>
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <form action="mailto:ojijotom4@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+            <input type="submit" value="Send">
+        </form>
+    </section>
+
+    <section class="appointment">
+        <h2>Book an Appointment</h2>
+        <p>Schedule a 30-minute meeting with me using the form below:</p>
+        <iframe src="https://calendly.com/ojijotom4/30min"></iframe>
     </section>
 
     <footer>
