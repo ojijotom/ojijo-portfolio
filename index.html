@@ -1,273 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tom Ojijo - Software Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #002B5B;
-      --accent: #00B4D8;
-      --light: #f9f9f9;
-      --gray: #e0e0e0;
-      --text-dark: #222;
-      --text-light: #fff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom Ojijo - Software Engineer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
 
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+        header {
+            background: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--light);
-      color: var(--text-dark);
-      overflow-x: hidden;
-    }
+        header img {
+            width: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
 
-    /* Animations */
-    @keyframes fadeUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+        header h1 {
+            margin: 10px 0;
+            font-size: 28px;
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+        header p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
 
-    header {
-      background-color: var(--primary);
-      color: var(--text-light);
-      text-align: center;
-      padding: 2rem 1rem;
-      animation: fadeUp 1s ease-in-out;
-    }
+        header .contact-info a {
+            color: #9fe3ff;
+        }
 
-    header img {
-      width: 120px;
-      border-radius: 50%;
-      border: 4px solid var(--accent);
-      margin-bottom: 1rem;
-    }
+        section {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 900px;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
+        section h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
 
-    header p {
-      margin: 0.5rem 0;
-      font-weight: 300;
-    }
+        .tech-stack ul, .experience ul, .projects ul, .certifications ul, .highlights ul, .soft-skills ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
 
-    header .contact-info a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+        .projects .project {
+            margin-bottom: 20px;
+        }
 
-    main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-    section {
-      background: #fff;
-      border-radius: 10px;
-      margin-bottom: 2rem;
-      padding: 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeUp 1s ease forwards;
-    }
+        .contact form input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
 
-    section:nth-of-type(2) { animation-delay: 0.2s; }
-    section:nth-of-type(3) { animation-delay: 0.4s; }
-    section:nth-of-type(4) { animation-delay: 0.6s; }
-    section:nth-of-type(5) { animation-delay: 0.8s; }
-    section:nth-of-type(6) { animation-delay: 1s; }
-    section:nth-of-type(7) { animation-delay: 1.2s; }
-    section:nth-of-type(8) { animation-delay: 1.4s; }
-    section:nth-of-type(9) { animation-delay: 1.6s; }
+        .contact form input[type="submit"]:hover {
+            background-color: #555;
+        }
 
-    section h2 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
+        .appointment iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
 
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-    }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
 
-    ul li::before {
-      content: "✔";
-      margin-right: 0.5rem;
-      color: var(--accent);
-    }
-
-    .projects .project {
-      margin-bottom: 1.5rem;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .projects .project:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid var(--gray);
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-
-    form input[type="submit"] {
-      background-color: var(--primary);
-      color: var(--text-light);
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    form input[type="submit"]:hover {
-      background-color: var(--accent);
-    }
-
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 10px;
-      margin-top: 1rem;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    footer {
-      background-color: var(--primary);
-      color: var(--text-light);
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      margin-top: 3rem;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-
-      section {
-        padding: 1rem;
-      }
-    }
-  </style>
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <img src="https://i.imgur.com/EV9pP78.jpg" alt="Tom Ojijo">
+        <h1>Tom Ojijo</h1>
+        <p>Software Engineer | Freelancer | Tech Enthusiast</p>
+        <div class="contact-info">
+            <p>Email: ojijotom4@gmail.com</p>
+            <p>Phone: +254 721 956 607</p>
+            <p>Portfolio: <a href="https://ojijotom.github.io/ojijo-portfolio/">My Portfolio</a></p>
+            <p>GitHub: <a href="https://github.com/ojijotom">github.com/ojijotom</a></p>
+        </div>
+    </header>
 
-<header>
-  <img src="https://i.imgur.com/EV9pP78.jpg" alt="Tom Ojijo" />
-  <h1>Tom Ojijo</h1>
-  <p>Software Engineer | Freelancer | Tech Enthusiast</p>
-  <div class="contact-info">
-    <p>Email: ojijotom4@gmail.com</p>
-    <p>Phone: +254 721 956 607</p>
-    <p>Portfolio: <a href="https://ojijotom.github.io/ojijo-portfolio/">My Portfolio</a></p>
-    <p>GitHub: <a href="https://github.com/ojijotom">github.com/ojijotom</a></p>
-  </div>
-</header>
+    <section class="summary">
+        <h2>Professional Summary</h2>
+        <p>Creative and detail-oriented Software Engineer with a passion for solving problems through clean, scalable code. Skilled in fullstack and Android development, with a strong foundation in machine learning and DevOps. Known for delivering efficient apps and systems, blending logic and storytelling into every project. Eager to collaborate, innovate, and continuously learn.</p>
+    </section>
 
-<main>
+    <section class="tech-stack">
+        <h2>Tech Stack</h2>
+        <ul>
+            <li><strong>Languages:</strong> Kotlin, Java, JavaScript, Python, C, C++, Dart, PHP, HTML5, CSS3</li>
+            <li><strong>Mobile:</strong> Android, Jetpack Compose, Flutter</li>
+            <li><strong>Backend & Web:</strong> Django, Django REST, Node.js, Flask, Laravel, Spring</li>
+            <li><strong>Databases:</strong> MySQL, PostgreSQL, SQLite, MongoDB, Firebase</li>
+            <li><strong>Tools:</strong> Git, GitHub, GitLab, Docker, AWS, Azure, Heroku, Apache</li>
+            <li><strong>Frameworks/Libraries:</strong> React, NumPy, Pandas, Keras, TensorFlow</li>
+            <li><strong>Other:</strong> Blockchain Dev, Linux, REST APIs</li>
+        </ul>
+    </section>
 
-  <section class="summary">
-    <h2>Professional Summary</h2>
-    <p>Creative and detail-oriented Software Engineer with a passion for solving problems through clean, scalable code...</p>
-  </section>
+    <section class="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>O-Invest</h3>
+            <p>Fintech app for payments and investments, integrated with Flutterwave API for seamless transactions.</p>
+        </div>
+        <div class="project">
+            <h3>LAW-MATE</h3>
+            <p>Legal reference app with offline database, built using Kotlin, Jetpack Compose, and Room for efficient law management.</p>
+        </div>
+        <div class="project">
+            <h3>TaskHive</h3>
+            <p>Worker-manager communication platform, featuring task scheduling and real-time updates using Kotlin and Jetpack Compose.</p>
+        </div>
+        <div class="project">
+            <h3>Nyadhoch-site</h3>
+            <p>A static responsive website for a business, built with HTML and CSS for an elegant user experience.</p>
+        </div>
+        <div class="project">
+            <h3>Meditrina, Instamart, Kenyatta Site</h3>
+            <p>Various front-end mini-projects showcasing HTML, CSS, and JavaScript skills.</p>
+        </div>
+    </section>
 
-  <section class="tech-stack">
-    <h2>Tech Stack</h2>
-    <ul>
-      <li><strong>Languages:</strong> Kotlin, Java, JavaScript, Python...</li>
-      <li><strong>Mobile:</strong> Android, Jetpack Compose, Flutter</li>
-      <li><strong>Backend:</strong> Django, Node.js, Flask...</li>
-    </ul>
-  </section>
+    <section class="experience">
+        <h2>Experience</h2>
+        <ul>
+            <li><strong>Freelance Software Engineer</strong> (2023–Present)</li>
+            <li><strong>Android Development Intern</strong>, eMobilis Mobile Technology Institute (2022–2023)</li>
+        </ul>
+    </section>
 
-  <section class="projects">
-    <h2>Projects</h2>
-    <div class="project"><h3>O-Invest</h3><p>Fintech app with Flutterwave API integration.</p></div>
-    <div class="project"><h3>LAW-MATE</h3><p>Offline legal reference app built with Jetpack Compose.</p></div>
-    <div class="project"><h3>TaskHive</h3><p>Real-time team task app with Kotlin and Compose.</p></div>
-  </section>
+    <section class="certifications">
+        <h2>Certifications</h2>
+        <ul>
+            <li>Android Dev with Kotlin – eMobilis (HOPE Platform)</li>
+            <li>Fullstack Web Development – eMobilis (HOPE Platform)</li>
+            <li>Machine Learning with TensorFlow – eMobilis (HOPE Platform)</li>
+        </ul>
+    </section>
 
-  <section class="experience">
-    <h2>Experience</h2>
-    <ul>
-      <li><strong>Freelance Software Engineer</strong> (2023–Present)</li>
-      <li><strong>Intern</strong> at eMobilis (2022–2023)</li>
-    </ul>
-  </section>
+    <section class="highlights">
+        <h2>Highlights & Achievements</h2>
+        <ul>
+            <li>GitHub 'Pull Shark' Achievement</li>
+            <li>45+ public repositories</li>
+            <li>150+ commits in the past year</li>
+            <li>Active open-source contributor</li>
+        </ul>
+    </section>
 
-  <section class="certifications">
-    <h2>Certifications</h2>
-    <ul>
-      <li>Android Dev with Kotlin – eMobilis</li>
-      <li>Fullstack Web – eMobilis</li>
-    </ul>
-  </section>
+    <section class="soft-skills">
+        <h2>Soft Skills</h2>
+        <ul>
+            <li>Problem Solving</li>
+            <li>Time Management</li>
+            <li>Creativity</li>
+            <li>Teamwork</li>
+            <li>Communication</li>
+            <li>Rapid Learning</li>
+        </ul>
+    </section>
 
-  <section class="highlights">
-    <h2>Highlights</h2>
-    <ul>
-      <li>GitHub 'Pull Shark'</li>
-      <li>150+ commits this year</li>
-    </ul>
-  </section>
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <form action="mailto:ojijotom4@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
 
-  <section class="soft-skills">
-    <h2>Soft Skills</h2>
-    <ul>
-      <li>Teamwork</li>
-      <li>Creativity</li>
-    </ul>
-  </section>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
 
-  <section class="contact">
-    <h2>Contact Me</h2>
-    <form action="mailto:ojijotom4@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
-      <input type="submit" value="Send Message" />
-    </form>
-  </section>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
 
-  <section class="appointment">
-    <h2>Book an Appointment</h2>
-    <p>Schedule a 30-minute meeting with me below:</p>
-    <iframe src="https://calendly.com/ojijotom4/30min"></iframe>
-  </section>
+            <input type="submit" value="Send">
+        </form>
+    </section>
 
-</main>
+    <section class="appointment">
+        <h2>Book an Appointment</h2>
+        <p>Schedule a 30-minute meeting with me using the form below:</p>
+        <iframe src="https://calendly.com/ojijotom4/30min"></iframe>
+    </section>
 
-<footer>
-  <p>&copy; 2025 Tom Ojijo. All Rights Reserved.</p>
-</footer>
-
+    <footer>
+        <p>Copyright © 2025 Tom Ojijo</p>
+    </footer>
 </body>
 </html>
