@@ -17,6 +17,7 @@
 
     * {
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -24,6 +25,24 @@
       font-family: 'Inter', sans-serif;
       background-color: var(--light);
       color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     header {
@@ -31,6 +50,7 @@
       color: var(--text-light);
       text-align: center;
       padding: 2rem 1rem;
+      animation: fadeUp 1s ease-in-out;
     }
 
     header img {
@@ -67,7 +87,19 @@
       margin-bottom: 2rem;
       padding: 2rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s ease forwards;
     }
+
+    section:nth-of-type(2) { animation-delay: 0.2s; }
+    section:nth-of-type(3) { animation-delay: 0.4s; }
+    section:nth-of-type(4) { animation-delay: 0.6s; }
+    section:nth-of-type(5) { animation-delay: 0.8s; }
+    section:nth-of-type(6) { animation-delay: 1s; }
+    section:nth-of-type(7) { animation-delay: 1.2s; }
+    section:nth-of-type(8) { animation-delay: 1.4s; }
+    section:nth-of-type(9) { animation-delay: 1.6s; }
 
     section h2 {
       color: var(--primary);
@@ -87,6 +119,12 @@
 
     .projects .project {
       margin-bottom: 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .projects .project:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     }
 
     form input, form textarea {
@@ -95,6 +133,7 @@
       margin-bottom: 1rem;
       border: 1px solid var(--gray);
       border-radius: 6px;
+      font-size: 1rem;
     }
 
     form input[type="submit"] {
@@ -116,6 +155,7 @@
       border: none;
       border-radius: 10px;
       margin-top: 1rem;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     footer {
@@ -156,66 +196,54 @@
 
   <section class="summary">
     <h2>Professional Summary</h2>
-    <p>Creative and detail-oriented Software Engineer with a passion for solving problems through clean, scalable code. Skilled in fullstack and Android development, with a strong foundation in machine learning and DevOps. Known for delivering efficient apps and systems, blending logic and storytelling into every project. Eager to collaborate, innovate, and continuously learn.</p>
+    <p>Creative and detail-oriented Software Engineer with a passion for solving problems through clean, scalable code...</p>
   </section>
 
   <section class="tech-stack">
     <h2>Tech Stack</h2>
     <ul>
-      <li><strong>Languages:</strong> Kotlin, Java, JavaScript, Python, C, C++, Dart, PHP, HTML5, CSS3</li>
+      <li><strong>Languages:</strong> Kotlin, Java, JavaScript, Python...</li>
       <li><strong>Mobile:</strong> Android, Jetpack Compose, Flutter</li>
-      <li><strong>Backend & Web:</strong> Django, Node.js, Flask, Laravel, Spring</li>
-      <li><strong>Databases:</strong> MySQL, PostgreSQL, SQLite, MongoDB, Firebase</li>
-      <li><strong>Tools:</strong> Git, GitHub, Docker, AWS, Heroku</li>
-      <li><strong>Other:</strong> React, TensorFlow, REST APIs, Linux</li>
+      <li><strong>Backend:</strong> Django, Node.js, Flask...</li>
     </ul>
   </section>
 
   <section class="projects">
     <h2>Projects</h2>
-    <div class="project"><h3>O-Invest</h3><p>Fintech app for payments and investments, integrated with Flutterwave API.</p></div>
-    <div class="project"><h3>LAW-MATE</h3><p>Legal reference app built with Jetpack Compose and Room database.</p></div>
-    <div class="project"><h3>TaskHive</h3><p>Task scheduling platform for teams, built using Kotlin and Jetpack Compose.</p></div>
-    <div class="project"><h3>Nyadhoch-site</h3><p>Responsive static business site using HTML and CSS.</p></div>
-    <div class="project"><h3>Meditrina, Instamart, Kenyatta Site</h3><p>Front-end mini-projects showcasing UI/UX skills in HTML/CSS/JS.</p></div>
+    <div class="project"><h3>O-Invest</h3><p>Fintech app with Flutterwave API integration.</p></div>
+    <div class="project"><h3>LAW-MATE</h3><p>Offline legal reference app built with Jetpack Compose.</p></div>
+    <div class="project"><h3>TaskHive</h3><p>Real-time team task app with Kotlin and Compose.</p></div>
   </section>
 
   <section class="experience">
     <h2>Experience</h2>
     <ul>
       <li><strong>Freelance Software Engineer</strong> (2023–Present)</li>
-      <li><strong>Android Development Intern</strong>, eMobilis (2022–2023)</li>
+      <li><strong>Intern</strong> at eMobilis (2022–2023)</li>
     </ul>
   </section>
 
   <section class="certifications">
     <h2>Certifications</h2>
     <ul>
-      <li>Android Dev with Kotlin – eMobilis (HOPE)</li>
-      <li>Fullstack Web Dev – eMobilis (HOPE)</li>
-      <li>Machine Learning with TensorFlow – eMobilis</li>
+      <li>Android Dev with Kotlin – eMobilis</li>
+      <li>Fullstack Web – eMobilis</li>
     </ul>
   </section>
 
   <section class="highlights">
-    <h2>Highlights & Achievements</h2>
+    <h2>Highlights</h2>
     <ul>
-      <li>GitHub 'Pull Shark' Achievement</li>
-      <li>45+ public repositories</li>
-      <li>150+ commits in the past year</li>
-      <li>Open-source contributor</li>
+      <li>GitHub 'Pull Shark'</li>
+      <li>150+ commits this year</li>
     </ul>
   </section>
 
   <section class="soft-skills">
     <h2>Soft Skills</h2>
     <ul>
-      <li>Problem Solving</li>
-      <li>Time Management</li>
-      <li>Creativity</li>
       <li>Teamwork</li>
-      <li>Communication</li>
-      <li>Rapid Learning</li>
+      <li>Creativity</li>
     </ul>
   </section>
 
@@ -232,7 +260,7 @@
   <section class="appointment">
     <h2>Book an Appointment</h2>
     <p>Schedule a 30-minute meeting with me below:</p>
-    <iframe src="https://calendly.com/ojijotom4/30min" title="Book an appointment with Tom Ojijo"></iframe>
+    <iframe src="https://calendly.com/ojijotom4/30min"></iframe>
   </section>
 
 </main>
